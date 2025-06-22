@@ -1,26 +1,41 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --color-primary: #005853;
+  --color-primary-hover: #16847e;
+
+  --color-text: #1a1a1a;
+  --color-text-secondary: #555555;
+  --color-text-inverse: #ffffff;
+
+  --color-background: #ffffff;
+  --color-background-muted: #f9f9f9;
+  --color-background-dark: #121212;
+
+  --color-border: #e0e0e0;
+  --color-border-focus: #005853;
+
+  --color-secondary: #f0f0f0;
+  --color-secondary-hover: #e6fffa;
+
+  --font-sans: Arial, Helvetica, sans-serif;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+h1,
+h2,
+h3,
+.titulo {
+  font-family: "Outfit", sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer components {
+  .btn {
+    @apply px-4 py-2 rounded-full text-lg font-bold text-center cursor-pointer transition-colors;
+    background-color: var(--color-primary);
+    color: var(--color-text-inverse);
   }
-}
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  .btn:hover {
+    background-color: var(--color-primary-hover);
+  }
 }
