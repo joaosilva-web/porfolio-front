@@ -1,6 +1,6 @@
 @import "tailwindcss";
 
-:root {
+@theme inline {
   --color-primary: #005853;
   --color-primary-hover: #16847e;
 
@@ -28,6 +28,12 @@ h3,
   font-family: "Outfit", sans-serif;
 }
 
+@layer utilities {
+  .cursive {
+    font-family: "Caveat", cursive;
+  }
+}
+
 @layer components {
   .btn {
     @apply px-4 py-2 rounded-full text-lg font-bold text-center cursor-pointer transition-colors;
@@ -37,5 +43,22 @@ h3,
 
   .btn:hover {
     background-color: var(--color-primary-hover);
+  }
+
+  @layer components {
+    .link {
+      @apply inline-block duration-300 after:block after:h-0.5 after:w-0 hover:after:w-full;
+    }
+
+    .link:hover {
+      color: var(--color-primary);
+    }
+
+    .link::after {
+      content: "";
+      background-color: var(--color-primary);
+      transition: all;
+      transition-duration: 300ms;
+    }
   }
 }

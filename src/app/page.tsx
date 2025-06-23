@@ -1,3 +1,11 @@
+"use client";
+
+import { Header } from "./components/layouts/Header";
+
 export default function Home() {
-  return <button className="btn">Hello world</button>;
+  return (
+    <div>
+      <Header />
+    </div>
+  );
 }
